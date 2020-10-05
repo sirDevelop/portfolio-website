@@ -34,25 +34,48 @@ function setTheme(mode) {
 }
 
 $(document).ready(function () {
-  let notification = document.getElementById("email-notification-text")
-    .innerHTML;
-
-  //if the inner text is not empty, meaning that email has been sent
-  if (notification) {
-    $.Toast("Success", "Email has been sent", "success", {
+  const emailSuccess = getCookie("emailSuccess");
+  console.log(emailSuccess);
+  console.log(emailSuccess == "true");
+  if (emailSuccess) {
+    $.Toast("Success!", "Email has been sent", "success", {
       has_icon: true,
       has_close_btn: true,
       stack: true,
-      position_class: "toast-top-center",
+      position_class: "toast-top-left",
       fullscreen: false,
-      timeout: 1000,
+      timeout: 6000,
       sticky: false,
       has_progress: true,
       rtl: false,
     });
-    setTimeout(function () {
-      document.getElementById("email-notification-text").innerHTML = "";
-      window.location.href = "/";
-    }, 1000);
+    deleteCookie("emailSuccess");
   }
 });
+
+function deleteCookie(name, path, domain) {
+  if (getCookie(name)) {
+    document.cookie =
+      name +
+      "=" +
+      (path ? ";path=" + path : "") +
+      (domain ? ";domain=" + domain : "") +
+      ";expires=Thu, 01 Jan 1970 00:00:01 GMT";
+  }
+}
+
+function getCookie(cname) {
+  var name = cname + "=";
+  var decodedCookie = decodeURIComponent(document.cookie);
+  var ca = decodedCookie.split(";");
+  for (var i = 0; i < ca.length; i++) {
+    var c = ca[i];
+    while (c.charAt(0) == " ") {
+      c = c.substring(1);
+    }
+    if (c.indexOf(name) == 0) {
+      return c.substring(name.length, c.length);
+    }
+  }
+  return "";
+}

@@ -3,11 +3,12 @@ const bodyParser = require("body-parser");
 const exphbs = require("express-handlebars");
 const path = require("path");
 const nodemailer = require("nodemailer");
-const jquery = require("jquery");
+const cookieParser = require("cookie-parser");
 
 require("dotenv").config();
 
 const app = express();
+app.use(cookieParser());
 
 // View engine setup
 app.engine(
@@ -28,7 +29,6 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 app.get("/", (req, res) => {
-  // res.render("personal", { msg: "" });
   res.render("personal");
 });
 
@@ -48,7 +48,7 @@ app.post("/send", (req, res) => {
   let transporter = nodemailer.createTransport({
     host: "smtp-mail.outlook.com",
     port: 587,
-    secure: false, //true for 465, false for other ports
+    secure: false,
     auth: {
       user: process.env.EMAIL,
       pass: process.env.EMAIL_PASSWORD,
@@ -69,14 +69,12 @@ app.post("/send", (req, res) => {
   transporter.sendMail(mailOptions, (error, info) => {
     if (error) {
       return console.log(error);
+    } else {
+      res.cookie("emailSuccess", true);
     }
     console.log("Message sent: %s", info.messageId);
     console.log("Preview URL: %s", nodemailer.getTestMessageUrl(info));
-
-    // res.send({ success: true, message: "Email has been sent!" });
-    // res.render("personal");
-    res.render("personal", { msg: "Thank you!" });
-    // res.redirect("/");
+    res.redirect("/");
   });
 });
 
