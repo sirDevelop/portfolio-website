@@ -401,6 +401,11 @@ ul {
   font-size: 14px;
 }
 
+.email-notification {
+  text-align: center;
+  color: var(--buttonColor);
+}
+
 #submit-btn {
   margin-top: 10px;
   width: 100%;

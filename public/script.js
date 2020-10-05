@@ -32,3 +32,27 @@ function setTheme(mode) {
 
   localStorage.setItem("theme", mode);
 }
+
+$(document).ready(function () {
+  let notification = document.getElementById("email-notification-text")
+    .innerHTML;
+
+  //if the inner text is not empty, meaning that email has been sent
+  if (notification) {
+    $.Toast("Success", "Email has been sent", "success", {
+      has_icon: true,
+      has_close_btn: true,
+      stack: true,
+      position_class: "toast-top-center",
+      fullscreen: false,
+      timeout: 1000,
+      sticky: false,
+      has_progress: true,
+      rtl: false,
+    });
+    setTimeout(function () {
+      document.getElementById("email-notification-text").innerHTML = "";
+      window.location.href = "/";
+    }, 1000);
+  }
+});

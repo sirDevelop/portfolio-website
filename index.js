@@ -3,6 +3,8 @@ const bodyParser = require("body-parser");
 const exphbs = require("express-handlebars");
 const path = require("path");
 const nodemailer = require("nodemailer");
+const jquery = require("jquery");
+
 require("dotenv").config();
 
 const app = express();
@@ -19,7 +21,6 @@ app.engine(
 app.set("view engine", "handlebars");
 
 //Static folder
-console.log(path.join(__dirname, "public"));
 app.use("/public", express.static(path.join(__dirname, "public")));
 
 // Body Parse Middleware
@@ -27,6 +28,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 app.get("/", (req, res) => {
+  // res.render("personal", { msg: "" });
   res.render("personal");
 });
 
@@ -71,7 +73,10 @@ app.post("/send", (req, res) => {
     console.log("Message sent: %s", info.messageId);
     console.log("Preview URL: %s", nodemailer.getTestMessageUrl(info));
 
-    res.redirect("/");
+    // res.send({ success: true, message: "Email has been sent!" });
+    // res.render("personal");
+    res.render("personal", { msg: "Thank you!" });
+    // res.redirect("/");
   });
 });
 
