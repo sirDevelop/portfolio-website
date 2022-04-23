@@ -11,9 +11,13 @@
     <link rel="stylesheet" href="../public/css_themes/default.css" />
     <link id="theme-style" rel="stylesheet" href="" />
 
+	
+    <link rel="import" id="navbar" href="../views/navbar.html">
+
     <script src="../public/dist/jquery-3.5.1.min.js"></script>
     <link href="../public/dist/toast.style.min.css" rel="stylesheet">
     <script src="../public/dist/toast.script.js"></script>
+    <script src="https://kit.fontawesome.com/d6cd3cec5d.js" crossorigin="anonymous"></script>
 
     <title>Chen W.</title>
 </head>
@@ -34,12 +38,32 @@
                     </div>
 
                     <ul id="navigation">
-                        <li><a href="#about_section">Contact</a></li>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/digitalart">Digital Art</a></li>
+                        <li><a href="/#about_section">Contact</a></li>
                     </ul>
                 </div>
 
                 <div class="left-column">
-                    <img id="profile_pic" src="../public/images/profile-pic.jpg" alt="" />
+                    <div class="slideshow-container">
+                        <div class="mySlides"><img id="profile_pic" src="../public/images/skydive-landing-2.jpg" alt="" /></div>
+                        <div class="mySlides"><img id="profile_pic" src="../public/images/skydive1.jpg" alt="" /></div>
+                        <div class="mySlides"><img id="profile_pic" src="../public/images/skydive2.jpg" alt="" /></div>
+                        <div class="mySlides"><img id="profile_pic" src="../public/images/skydive3.jpg" alt="" /></div>
+                        <div class="mySlides"><img id="profile_pic" src="../public/images/skydive4.jpg" alt="" /></div>
+
+                        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                    </div>
+
+                    <div style="text-align:center">
+                        <span class="dot" onclick="currentSlide(1)"></span>
+                        <span class="dot" onclick="currentSlide(2)"></span>
+                        <span class="dot" onclick="currentSlide(3)"></span>
+                        <span class="dot" onclick="currentSlide(4)"></span>
+                        <span class="dot" onclick="currentSlide(5)"></span>
+                    </div>
+
                     <h5 style="text-align: center; line-height: 0;">
                         Personalize Theme
                     </h5>
@@ -47,7 +71,7 @@
                     <div id="theme-options-wrapper">
                         <div data-mode="light" id="light-mode" class="theme-dot"></div>
                         <div data-mode="blue" id="blue-mode" class="theme-dot"></div>
-                        <div data-mode="green" id="green-mode" class="theme-dot"></div>
+                        <div data-mode="red" id="red-mode" class="theme-dot"></div>
                         <div data-mode="purple" id="purple-mode" class="theme-dot"></div>
                     </div>
 
@@ -70,8 +94,8 @@
                                 </div>
                             </div>
                             <p>
-                                I have a degree in Computer Science and minor in Mathematics from MIT.
-                                Post graduation, I am a software engineer.
+                                I graduated MIT in 2018 with a major in Computer Science and minor in Math.
+                                Since then, I've worked as a Full Stack Software Engineer at Johnson & Johnson and IXL Learning.
                             </p>
                             <div id="corner-bl" class="corner"></div>
                             <div id="corner-br" class="corner"></div>
@@ -89,18 +113,16 @@
                     <h4>More</h4>
                     <p>
                         Outside of software development, I am interested
-                        in applying statistical methods and programming to
-                        solve data driven problems. My
+                        in big data problems and digitally generated art. My
                         <a target="_blank" href="https://github.com/sirDevelop">Github</a>
-                        contains the source code of my coding projects as well as the
-                        jupyter notebooks of my data science projects. These are publicly
-                        available for educational purposes.
+                        contains the source code of some of my coding projects and the
+                        jupyter notebooks of some of my data science projects.
                     </p>
                     <hr />
 
                     <h4>Skills and Experiences</h4>
                     <p>
-                        Software Developer and Data Scientist:
+                        Software Developer and Artist:
                         <a target="_blank" href="../public/resume.pdf">Resume</a>
                     </p>
 
@@ -110,35 +132,35 @@
                             <li>Javascript/Typescript</li>
                             <li>Node.js</li>
                             <li>Angular</li>
-                            <li>React</li>
+                            <li>Java</li>
+                            <li>Python</li>
                         </ul>
                         <ul>
-                            <li>Python</li>
-                            <li>Java</li>
+                            <li>MongoDB</li>
                             <li>SQL</li>
                             <li>R</li>
+                            <li>Processing</li>
                         </ul>
                     </div>
                 </div>
 
                 <div class="social-links">
-                    <h4>Interesting Facts</h4>
-                    <div id="skills" class="facts">
+                    <h4>Facts About Me</h4>
+                    <div id="facts" class="facts">
                         <p>
                         <ul>
-                            <li>As a kid, my dream job was a magician</li>
-                            <li>At age 4, I almost fell off a 5 story building</li>
-                            <li>I have worked at 6 different tech companies</li>
-                            <li>I was a triathlete</li>
-                            <li>My favorite dog is a Corgi</li>
-                            <li>I was only 2 classes short of a math major</li>
-                            <li>My family owns a Chinese/Japanese fusion restaurant</li>
-                            <li>I am an amateur guitarist</li>
-                            <li>I loved 'Vampire Diaries' and 'The Originals'</li>
+                            <li>I ride a long range electric unicycle. The brand is Veteran Sherman</li>
+                            <li>I almost fell off the roof of a 5 story building when I was 4</li>
+                            <li>I am a B-licensed skydiver with over 100 skydives</li>
+                            <li>I have 2 Shiba Inus. A white Shiba named Marco and a red Shiba named Katara</li>
+                            <li>I used to be a delivery driver for <a target="_blank" href="http://www.benichopsticks.com/">my family restaurant</a></li>
+                            <li>I am a Go/Baduk player. If you play on OGS, my username is <a target="_blank" href="https://online-go.com/user/view/1140544">blueSkies89</a>. I welcome match requests</li>
+                            <li>I ferment my own Kombucha and pickle my own vegetables</li>
+                            <li>I am an online tutor on <a target="_blank" href="https://www.wyzant.com/Tutors/cw95">Wyzant</a></li>
                             <li>I was vegetarian for 3 years and vegan for 1 year</li>
-                            <li>I don't drink coffee</li>
-                            <li>My dream car is a Tesla</li>
-                            <li>I am a Virgo</li>
+                            <li>I have traveled to 5 countries and visited 27 states in the U.S.</li>
+                            <li>I am a volunteer at <a target="_blank" href="https://www.muddypawsrescue.org/adoptable-dogs">Muddy Paws Animal Rescue</a>. I've fostered a white lab named Miri and helped her find her furever home</li>
+                            <li>I once spent 2 months traveling and tent camping throughout Arizona and California</li>
                         </ul>
                         </p>
                     </div>
@@ -236,7 +258,7 @@
     <section id="ending" class="s1">
         <h4>
             <p>
-                Happily Employed At the Moment
+               Open to Opportunities
             </p>
             <a target="_blank" href="https://github.com/sirDevelop">Github</a>
         </h4>

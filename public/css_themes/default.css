@@ -148,6 +148,11 @@ ul {
   border-radius: 5px 5px 0 0;
 }
 
+#navigation a:hover {
+  color: blue;
+  background-color: yellow;
+}
+
 #navigation a {
   color: var(--mainText);
 }
@@ -239,11 +244,11 @@ ul {
 }
 
 #blue-mode {
-  background-color: #192734;
+  background-color: #1b4d7c;
 }
 
-#green-mode {
-  background-color: #78866b;
+#red-mode {
+  background-color: #ce1a1a;
 }
 
 #purple-mode {
@@ -318,7 +323,7 @@ ul {
   gap: 100px;
 }
 
-#skills {
+#skills, #facts {
   display: flex;
   /* justify-content: space-evenly; */
   background-color: var(--previewShadow);
@@ -439,4 +444,67 @@ ul {
   .right-column {
     justify-content: center;
   }
+}
+
+.icon {
+  height: 25px;
+  width: 25px;
+}
+
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+  padding-bottom: 20px;
+}
+
+.mySlides {
+  display: none;
+}
+
+.prev, .next {
+  cursor: pointer;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 8px;
+  background-color: rgba(0,0,0,0.8);
+  opacity: 0.2;
+}
+
+.next {
+  right: 27%;
+  border-radius: 3px 0 0 3px;
+}
+
+.prev {
+  left: 27%;
+  border-radius: 3px 0 0 3px;
+}
+
+.prev:hover, .next:hover {
+  opacity: 1;
+}
+
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
 }
