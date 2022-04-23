@@ -22,9 +22,9 @@ function setTheme(mode) {
   } else if (mode == "blue") {
     document.getElementById("theme-style").href =
       "../public/css_themes/blue.css";
-  } else if (mode == "green") {
+  } else if (mode == "red") {
     document.getElementById("theme-style").href =
-      "../public/css_themes/green.css";
+      "../public/css_themes/red.css";
   } else if (mode == "purple") {
     document.getElementById("theme-style").href =
       "../public/css_themes/purple.css";
@@ -35,8 +35,8 @@ function setTheme(mode) {
 
 $(document).ready(function () {
   const emailSuccess = getCookie("emailSuccess");
-  console.log(emailSuccess);
-  console.log(emailSuccess == "true");
+  // console.log(emailSuccess);
+  // console.log(emailSuccess == "true");
   if (emailSuccess) {
     $.Toast("Success!", "Email has been sent", "success", {
       has_icon: true,
@@ -78,4 +78,49 @@ function getCookie(cname) {
     }
   }
   return "";
+}
+
+let liTags = document.getElementById("facts").getElementsByTagName('li');
+for(let i = 0; i < liTags.length; i++) {
+  if(i%2 == 1) {
+    liTags[i].style.border = "2px solid";
+    liTags[i].style.borderLeft = "none";
+    liTags[i].style.borderRight = "none";
+    if(i == liTags.length - 1) {
+      liTags[i].style.borderBottom = "none";
+    }
+  }
+  
+  liTags[i].style.width = "95%";
+  liTags[i].style.paddingBottom = "10px";
+}
+
+//Profile Image Slide Animation
+let slideIndex = 1;
+showSlides(slideIndex);
+
+// Next/previous controls
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+// Thumbnail image controls
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  let dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
 }

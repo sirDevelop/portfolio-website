@@ -32,6 +32,10 @@ app.get("/", (req, res) => {
   res.render("personal");
 });
 
+app.get("/digitalart", (req, res) => {
+  res.sendFile( __dirname + "/views/" + "digitalart.html" );
+});
+
 app.post("/send", (req, res) => {
   const output = `
     <p>You have a new contact request</p>
