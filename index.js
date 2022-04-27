@@ -50,7 +50,7 @@ app.post("/send", (req, res) => {
     `;
 
   let transporter = nodemailer.createTransport({
-    host: "smtp-mail.outlook.com",
+    host: "smtp.gmail.com",
     port: 587,
     secure: false,
     auth: {
