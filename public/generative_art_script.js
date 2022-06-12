@@ -1,6 +1,7 @@
 $(function () {
     let videoPath = ["../public/animations/blood_pyramid_6_10_22.mp4", "../public/animations/striped_lines_6_10_22.mp4",
-    "../public/animations/christmas_tree_6_10_22.mp4", "../public/animations/spider_web_6_11_22.mp4", "../public/animations/rainbow_6_11_22.mp4"];
+    "../public/animations/christmas_tree_6_10_22.mp4", "../public/animations/spider_web_6_11_22.mp4", "../public/animations/rainbow_6_11_22.mp4"
+    , "../public/animations/four_seasons_6_11_22.mp4"];
     
     // let thumbNailPath = ["../public/animations/thumbnails/Striped Lines.png", "../public/animations/thumbnails/blood pyramid.png",
     // "../public/animations/thumbnails/Christmas Tree.png", "../public/animations/thumbnails/Locking Web.png"];
