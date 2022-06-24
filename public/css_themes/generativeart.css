@@ -83,7 +83,7 @@ body {
     background-color: yellow;
   }
 
-  .tooltip .tooltiptext {
+  /* .tooltip .tooltiptext {
     visibility: hidden;
     width: 240px;
     background-color: black;
@@ -93,7 +93,6 @@ body {
     padding: 5px 0;
     position: relative;
     z-index: 1;
-    /* top: 20%; */
     left: 50%;
     margin-left: -60px;
   }
@@ -111,4 +110,4 @@ body {
   
   .tooltip:hover .tooltiptext {
     visibility: visible;
-  }
+  } */
