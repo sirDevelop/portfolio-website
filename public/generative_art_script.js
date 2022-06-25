@@ -7,7 +7,8 @@ $(function () {
     // "../public/animations/thumbnails/Christmas Tree.png", "../public/animations/thumbnails/Locking Web.png"];
 
     for (let i = 0; i < videoPath.length; i++) {
-      let videoDiv = $("<div class='img-w'><div class='tooltip'><span class='tooltiptext'>Title: 4 Seasons</span></div></div>");
+      // <div class='tooltip'><span class='tooltiptext'>Title: 4 Seasons</span></div>
+      let videoDiv = $("<div class='img-w'></div>");
       videoDiv.appendTo($(".gallery"));
   
       videoDiv.wrap("<div class='img-c'></div>");

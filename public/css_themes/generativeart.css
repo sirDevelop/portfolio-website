@@ -83,7 +83,7 @@ body {
     background-color: yellow;
   }
 
-  /* .tooltip .tooltiptext {
+  .tooltip .tooltiptext {
     visibility: hidden;
     width: 240px;
     background-color: black;
@@ -110,4 +110,4 @@ body {
   
   .tooltip:hover .tooltiptext {
     visibility: visible;
-  } */
+  }
