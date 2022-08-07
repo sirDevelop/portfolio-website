@@ -39,7 +39,7 @@ app.get("/digitalart", (req, res) => {
 app.get("/generativeart", (req, res) => {
   res.sendFile( __dirname + "/views/" + "generativeart.html" );
 });
-
+/*
 app.post("/send", (req, res) => {
   const output = `
     <p>You have a new contact request</p>
@@ -66,6 +66,7 @@ app.post("/send", (req, res) => {
     },
   });
 
+
   let mailOptions = {
     from: process.env.EMAIL,
     to: process.env.EMAIL,
@@ -85,7 +86,7 @@ app.post("/send", (req, res) => {
     res.redirect("/");
   });
 });
-
+*/
 const port = process.env.PORT || 3000;
 app.listen(port, () =>
   console.log(`Server started. Listening at port ${port}`)
