@@ -23,6 +23,7 @@
     "node-localstorage": "^2.1.6",
     "node-snackbar": "^0.1.16",
     "nodemailer": "^6.4.12",
+    "nodemon": "^3.0.1",
     "screenfull": "^3.3.0",
     "sessionstorage": "^0.1.0",
     "snackbar": "^1.1.0"
