@@ -36,7 +36,7 @@ $(function () {
   imgPath.forEach(imgUrl => {
     let imgDiv = $("<div class='img-w'></div>");
     imgDiv.appendTo($(".gallery"));
-    imgDiv.css('background-image', 'url('+'chenw.net.s3.amazonaws.com'+imgUrl+')');
+    imgDiv.css('background-image', 'url(chenw.net.s3.amazonaws.com'+imgUrl+')');
 
     imgDiv.wrap("<div class='img-c'></div>");
   });
