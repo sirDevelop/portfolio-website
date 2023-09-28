@@ -37,10 +37,6 @@ strong {
   font-weight: 500;
 }
 
-h6 {
-  color: black;
-}
-
 p,
 li,
 span,
@@ -65,9 +61,11 @@ h4 {
 }
 h5 {
   font-size: 20px;
+  color:white;
 }
 h6 {
   font-size: 16px;
+  color: black;
 }
 
 a {
@@ -124,6 +122,7 @@ ul {
 
 .intro-wrapper {
   background-color: var(--secondaryColor);
+  background-image: url("../image/Rose.jpg");
   border: 1px solid var(--borderColor);
   border-radius: 5px 5px 0 0;
 
@@ -259,6 +258,7 @@ ul {
   font-size: 12px;
   font-style: italic;
   text-align: center;
+  color: white;
 }
 
 .right-column {
@@ -270,13 +270,13 @@ ul {
   padding-bottom: 50px;
 }
 
-#preview-shadow {
+/* #preview-shadow {
   background-color: var(--previewShadow);
   width: 300px;
   height: 180px;
   padding-left: 30px;
   padding-top: 30px;
-}
+} */
 
 #preview {
   width: 300px;
@@ -477,7 +477,7 @@ ul {
   margin-top: -22px;
   padding: 8px;
   background-color: rgba(0,0,0,0.8);
-  opacity: 0.2;
+  opacity: 0.6;
 }
 
 .next {
