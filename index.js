@@ -36,6 +36,10 @@ app.get("/digitalart", (req, res) => {
   res.sendFile( __dirname + "/views/" + "digitalart.html" );
 });
 
+app.get('s3url', (req, res) => {
+
+});
+
 app.get("/generativeart", (req, res) => {
   res.sendFile( __dirname + "/views/" + "generativeart.html" );
 });
