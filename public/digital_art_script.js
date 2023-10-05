@@ -36,6 +36,7 @@ $(function () {
   imgPath.forEach(imgUrl => {
     let imgDiv = $("<div class='img-w'></div>");
     imgDiv.appendTo($(".gallery"));
+    imgUrl = imgUrl.replace('.png','-min.png');
     imgDiv.css('background-image', 'url(..' + imgUrl + ')');
 
     imgDiv.wrap("<div class='img-c'></div>");
