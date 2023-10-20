@@ -120,9 +120,18 @@ ul {
   min-height: 10em;
 }
 
+.bg1 {
+  background-image: url("../image/Rose.jpg");
+}
+
+.bg2 {
+  background-image: url("../image/rose-fractal-min.png");
+}
+.intro {
+  margin-bottom: 50px;
+}
 .intro-wrapper {
   background-color: var(--secondaryColor);
-  background-image: url("../image/Rose.jpg");
   border: 1px solid var(--borderColor);
   border-radius: 5px 5px 0 0;
 
@@ -235,7 +244,9 @@ ul {
 }
 
 .theme-dot:hover {
-  border-width: 5px;
+  transform: scale(1.05);
+  /* border-width: 5px; */
+  
 }
 
 #light-mode {
@@ -282,7 +293,10 @@ ul {
   width: 300px;
   border: 1.5px solid #17a2b8;
   background-color: var(--previewBg);
-  padding: 15px;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-top: 20px;
+  padding-bottom: 20px;
   position: relative;
 }
 
@@ -323,6 +337,10 @@ ul {
   gap: 100px;
 }
 
+.slight-expand-on-hover:hover {
+  transform: scale(1.05);
+}
+
 #skills, #facts {
   display: flex;
   /* justify-content: space-evenly; */
@@ -345,6 +363,11 @@ ul {
   gap: 20px;
   justify-content: center;
   padding-bottom: 50px;
+}
+.music {
+  justify-content: center;
+  text-align: center;
+  margin-bottom: 50px;
 }
 
 .post {

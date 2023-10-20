@@ -32,9 +32,9 @@ app.get("/", (req, res) => {
   res.render("personal");
 });
 
-app.get("/digitalart", (req, res) => {
-  res.sendFile( __dirname + "/views/" + "digitalart.html" );
-});
+// app.get("/digitalart", (req, res) => {
+//   res.sendFile( __dirname + "/views/" + "digitalart.html" );
+// });
 
 app.get('s3url', (req, res) => {
 

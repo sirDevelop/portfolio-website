@@ -85,3 +85,7 @@ body {
     color: blue;
     background-color: yellow;
   }
+
+  #digital_art {
+    display: none;
+  }
