@@ -50,19 +50,24 @@ textarea {
 h1 {
   font-size: 56px;
 }
+
 h2 {
   font-size: 36px;
 }
+
 h3 {
   font-size: 28px;
 }
+
 h4 {
   font-size: 24px;
 }
+
 h5 {
   font-size: 20px;
-  color:white;
+  color: white;
 }
+
 h6 {
   font-size: 16px;
   color: black;
@@ -72,6 +77,7 @@ a {
   text-decoration: none;
   color: #17a2b8;
 }
+
 /* 
 ul {
   list-style: none;
@@ -90,6 +96,7 @@ ul {
   padding: 1px;
   border-radius: 5px;
 }
+
 .facts {
   line-height: 2;
   position: relative;
@@ -127,9 +134,11 @@ ul {
 .bg2 {
   background-image: url("../image/rose-fractal-min.png");
 }
+
 .intro {
   margin-bottom: 50px;
 }
+
 .intro-wrapper {
   background-color: var(--secondaryColor);
   border: 1px solid var(--borderColor);
@@ -246,7 +255,7 @@ ul {
 .theme-dot:hover {
   transform: scale(1.05);
   /* border-width: 5px; */
-  
+
 }
 
 #light-mode {
@@ -341,7 +350,8 @@ ul {
   transform: scale(1.05);
 }
 
-#skills, #facts {
+#skills,
+#facts {
   display: flex;
   /* justify-content: space-evenly; */
   background-color: var(--previewShadow);
@@ -364,6 +374,7 @@ ul {
   justify-content: center;
   padding-bottom: 50px;
 }
+
 .music {
   justify-content: center;
   text-align: center;
@@ -397,6 +408,11 @@ ul {
 .post-intro {
   color: #4b5156;
   font-size: 14px;
+}
+
+.post:hover {
+  border-color: blue;
+  box-shadow: 30px blue;
 }
 
 #contact-form {
@@ -485,7 +501,8 @@ ul {
   display: none;
 }
 
-.prev, .next {
+.prev,
+.next {
   cursor: pointer;
   color: white;
   font-weight: bold;
@@ -499,7 +516,7 @@ ul {
   width: auto;
   margin-top: -22px;
   padding: 8px;
-  background-color: rgba(0,0,0,0.8);
+  background-color: rgba(0, 0, 0, 0.8);
   opacity: 0.6;
 }
 
@@ -513,7 +530,8 @@ ul {
   border-radius: 3px 0 0 3px;
 }
 
-.prev:hover, .next:hover {
+.prev:hover,
+.next:hover {
   opacity: 1;
 }
 
@@ -528,6 +546,7 @@ ul {
   transition: background-color 0.6s ease;
 }
 
-.active, .dot:hover {
+.active,
+.dot:hover {
   background-color: #717171;
 }
