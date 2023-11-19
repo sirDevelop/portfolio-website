@@ -8,6 +8,8 @@
 
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@500&family=Russo+One&display=swap"
         rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+        integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
     <link rel="stylesheet" href="../public/css_themes/default.css" />
     <link rel="stylesheet" href="../public/css_themes/digitalart.css" />
     <link id="theme-style" rel="stylesheet" href="" />
@@ -20,12 +22,14 @@
     <script src="../public/dist/toast.script.js"></script>
     <script src="https://kit.fontawesome.com/d6cd3cec5d.js" crossorigin="anonymous"></script>
     <script type="text/javascript" src="../public/digital_art_script.js"></script>
+    <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.js"></script>
+
 
     <title>Cheng Wang</title>
 </head>
 
 <body>
-    <section id="intro" class="s1">
+    <section id="intro" class="sections">
         <div class="main-container intro">
             <div class="greeting-wrapper">
                 <div class="slight-expand-on-hover">
@@ -41,31 +45,39 @@
                         <div id="dot-3" class="browser-dot slight-expand-on-hover"></div>
                     </div>
                     <ul id="navigation">
-                        <li><a href="/#intro" onclick="hideSection('digital_art')">Home</a></li>
-                        <li><a href="/#digital_art" onclick="hideSection('intro')">Digital Art</a></li>
+                        <li><a href="/#intro" onclick="openSection('intro');">Home</a></li>
+                        <li><a href="/#digital_art" onclick="openSection('digital_art');">Digital Art</a></li>
                         {{!-- <li><a href="/generativeart">Generative Art</a></li> --}}
-                        <li><a href="/#about">Contact</a></li>
+                        <li><a href="/#contact" onclick="openSection('contact')">Contact</a></li>
                     </ul>
                 </div>
 
                 <div class="left-column">
                     <div class="slideshow-container slight-expand-on-hover">
-                        <div class="mySlides"><img id="profile_pic" src="../public/image/skydive-landing-2.jpg"
+                        <div class="mySlides"><img id="profile_pic"
+                                src="../public/image/skydive-landing-2.jpg" alt="" /></div>
+                        <div class="mySlides"><img id="profile_pic" src="../public/image/skydive1.jpg"
                                 alt="" /></div>
-                        <div class="mySlides"><img id="profile_pic" src="../public/image/skydive1.jpg" alt="" /></div>
-                        <div class="mySlides"><img id="profile_pic" src="../public/image/skydive2.jpg" alt="" /></div>
-                        <div class="mySlides"><img id="profile_pic" src="../public/image/skydive3.jpg" alt="" /></div>
-                        <div class="mySlides"><img id="profile_pic" src="../public/image/skydive4.jpg" alt="" /></div>
-                        <div class="mySlides"><img id="profile_pic" src="../public/image/Indra1.jpg" alt="" /></div>
-                        <div class="mySlides"><img id="profile_pic" src="../public/image/Indra2.jpg" alt="" /></div>
-                        <div class="mySlides"><img id="profile_pic" src="../public/image/Marco2.jpg" alt="" /></div>
-                        <div class="mySlides"><img id="profile_pic" src="../public/image/Marco1.jpg" alt="" /></div>
+                        <div class="mySlides"><img id="profile_pic" src="../public/image/skydive2.jpg"
+                                alt="" /></div>
+                        <div class="mySlides"><img id="profile_pic" src="../public/image/skydive3.jpg"
+                                alt="" /></div>
+                        <div class="mySlides"><img id="profile_pic" src="../public/image/skydive4.jpg"
+                                alt="" /></div>
+                        <div class="mySlides"><img id="profile_pic" src="../public/image/Indra1.jpg"
+                                alt="" /></div>
+                        <div class="mySlides"><img id="profile_pic" src="../public/image/Indra2.jpg"
+                                alt="" /></div>
+                        <div class="mySlides"><img id="profile_pic" src="../public/image/Marco2.jpg"
+                                alt="" /></div>
+                        <div class="mySlides"><img id="profile_pic" src="../public/image/Marco1.jpg"
+                                alt="" /></div>
 
                         <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
                         <a class="next" onclick="plusSlides(1)">&#10095;</a>
                     </div>
 
-                    <div style="text-align:center">
+                    <div class="dot-container">
                         <span class="dot" onclick="currentSlide(1)"></span>
                         <span class="dot" onclick="currentSlide(2)"></span>
                         <span class="dot" onclick="currentSlide(3)"></span>
@@ -90,18 +102,19 @@
                         *Theme settings will be saved for your next visit
                     </p>
                 </div>
-                <div class="right-column">
+                <div class="right-column d-none d-md-block">
                     <div id="preview-shadow">
                         <div id="preview">
                             <div id="corner-tl" class="corner"></div>
                             <div id="corner-tr" class="corner"></div>
                             <div class="bio-div">
                                 <div class="slight-expand-on-hover">
-                                    <h3>Introduction</h3>
+                                    <h3 class="my-4">Introduction</h3>
                                 </div>
                                 <div class="linkedin slight-expand-on-hover"><a target="_blank"
                                         href="https://www.linkedin.com/in/cwcw11//"><img
-                                            src="../public/image/linkedin.svg" alt="" height="40px" width="40px" /></a>
+                                            src="../public/image/linkedin.svg" alt="" height="40px"
+                                            width="40px" /></a>
                                 </div>
                             </div>
                             <p>I graduated MIT in 2018 with a major in Computer Science and minor in Math.</p>
@@ -114,32 +127,7 @@
         </div>
     </section>
 
-    <section id="digital_art" class="s1">
-        <div class="main-container">
-            <div class="greeting-wrapper center">
-                <h1 style="margin-bottom: 10px">Digital Art Gallery</h1>
-                <p>Created using Chaotica, all rights reserved.</p>
-                <p>Click on each image to expand.</p>
-            </div>
-
-            <div class="nav-wrapper">
-                <div class="dots-wrapper">
-                    <div id="dot-1" class="browser-dot"></div>
-                    <div id="dot-2" class="browser-dot"></div>
-                    <div id="dot-3" class="browser-dot"></div>
-                </div>
-
-                <ul id="navigation">
-                    <li><a href="/#intro" onclick="hideSection('digital_art')">Home</a></li>
-                    <li><a href="/#digital_art" onclick="hideSection('intro')">Digital Art</a></li>
-                    <!-- <li><a href="/generativeart">Generative Art</a></li> -->
-                    <li><a href="/#about">Contact</a></li>
-                </ul>
-            </div>
-            <div id="gallery"></div>
-        </div>
-    </section>
-    <section id="more" class="s2">
+    <section id="more" class="sections">
         <div class="main-container">
             <div class="about-wrapper">
                 <div class="about-me">
@@ -211,7 +199,7 @@
                     <div id="facts" class="facts">
                         <p>
                         <ul>
-                            <li>I own and ride 3 unicycles</li>
+                            <li>I ride an electric, 24", and 36" unicycle</li>
                             <li>I am a B-licensed skydiver with over 150 skydives</li>
                             <li>I have 2 white Shiba Inus named Marco and Indra</li>
                             <li>I used to be a delivery driver for <a target="_blank"
@@ -232,13 +220,13 @@
             </div>
         </div>
     </section>
-
-    <section id="music" class="s1">
-        <div class="main-container music">
+    
+    <section id="music" class="sections">
+        <div class="main-container music mt-3">
             <div class="slight-expand-on-hover">
                 <h4>Music for Your Enjoyment</h4>
             </div>
-            <div class="intro-wrapper bg2">
+            <div class="intro-wrapper bg2 mt-3">
                 <div class="left-column">
                     <iframe style="border-radius:12px"
                         src="https://open.spotify.com/embed/playlist/7ma9JNkfy35Pa00tVcGYo7?utm_source=generator"
@@ -257,156 +245,38 @@
         </div>
     </section>
 
-    <section id="past_projects" class="s2">
-        <div class="main-container">
+    <section id="past_projects" class="sections">
+        <div class="main-container text-center">
             <div class="slight-expand-on-hover">
-                <h3 style="text-align: center;">A Few Past Projects</h3>
+                <h3 class="text-center mt-4">A Few Past Projects</h3>
             </div>
 
-            <div class="post-wrapper">
-                <div>
-                    <div class="post">
-                        <a target="_blank" href="https://github.com/sirDevelop/little-lemon-app">
-                            <img class="thumbnail" src="../public/image/little-lemon-app-react.png" alt="" /></a>
-                        <div class="post-preview">
-                            <h6>Little Lemon Restaurant Website</h6>
-                            <p class="post-intro">
-                                This is a fully responsive website that
-                                allows you to create user accounts,
-                                login/logout, view the menu, place orders, create reservations, and
-                                saves order and reservation history. The tech stack involves HTML,
-                                CSS, JS, React, NodeJS, and MongoDB.
-                            </p>
-                            <a target="_blank" href="https://github.com/sirDevelop/little-lemon-app">Source
-                                Code</a>
-                        </div>
-                    </div>
-                </div>
-                <div>
-                    <div class="post">
-                        <a target="_blank" href="https://github.com/sirDevelop/beat-maker"><img class="thumbnail"
-                                src="../public/image/beatmaker-project.png" alt="" /></a>
-                        <div class="post-preview">
-                            <h6>Musical Beat Maker</h6>
-                            <p class="post-intro">
-                                Web application that allows users to choose between 4 different kicks, 4 different
-                                snares, and 4 different hihats to produce a beat. The tempo can be adjusted from 20 bpm
-                                up to 300 bpm. Coded in React.
-                            </p>
-                            <a target="_blank" href="https://github.com/sirDevelop/beat-maker">Source Code</a>
-                        </div>
-                    </div>
-                </div>
+            <div class="container my-4">
+                <ul id="filters" class="nav nav-tabs">
+                    <li class="nav-item" data-filter="*">
+                        <a id="se" class="nav-link active" aria-current="page">All Projects</a>
+                    </li>
+                    <li class="nav-item" data-filter=".se">
+                        <a id="se" class="nav-link" aria-current="page">Software Engineering</a>
+                    </li>
+                    <li class="nav-item" data-filter=".ds">
+                        <a class="nav-link">Data Science</a>
+                    </li>
+                </ul>
+            </div>
 
-                <div>
-                    <div class="post">
-                        <a target="_blank" href="https://github.com/sirDevelop/producer"><img class="thumbnail"
-                                src="../public/image/producer-project.png" alt="" /></a>
-                        {{!-- <img class="thumbnail" src="../public/image/producer-project.png" alt="" /> --}}
-                        <div class="post-preview">
-                            <h6>Musical Beat Producer </h6>
-                            <p class="post-intro">
-                                Web application that allows users to create a sequence of
-                                beats to form a musical track. User can control up to 16 drum pads using
-                                the keyboard or by mouse click, and set the tempo up to 300 bpm.
-                                Coded in Angular.
-                            </p>
-                            <a target="_blank" href="https://github.com/sirDevelop/producer">Source Code</a>
-                        </div>
-                    </div>
-                </div>
-                <div>
-                    <div class="post">
-                        <a target="_blank" href="https://github.com/sirDevelop/DataScienceGuidedCapstone">
-                            <img class="thumbnail" src="../public/image/ds-capstone.png" alt="" /></a>
-                        {{!-- <img class="thumbnail" src="../public/image/ds-capstone.png" alt="" /> --}}
-                        <div class="post-preview">
-                            <h6>Analysis of Ski Data</h6>
-                            <p class="post-intro">
-                                Data from 330 different ski resorts across the country with 32 features are analyzed.
-                                Recommendations are given on what amenities should be taken away and added to the resort
-                                as well as ideal ticket price to maximize revenue.
-                            </p>
-                            <a target="_blank" href="https://github.com/sirDevelop/DataScienceGuidedCapstone">Source
-                                Code</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div>
-                    <div class="post">
-                        <a target="_blank" href="https://github.com/sirDevelop/Cyclistic-Bike-Study">
-                            <img class="thumbnail" src="../public/image/cyclistic-project.png" alt="" /></a>
-                        <div class="post-preview">
-                            <h6>Analysis of Cyclistic Bike Share</h6>
-                            <p class="post-intro">
-                                An end to end data science project analyzing one year's worth of Cyclistic Rider Data.
-                                We created visualizations and insights
-                                based on member vs casual rider behavior and recommendations were given on how to
-                                convert casual riders to members.
-                            </p>
-                            <a target="_blank" href="https://github.com/sirDevelop/Cyclistic-Bike-Study">Source
-                                Code</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div>
-                    <div class="post">
-                        <a target="_blank" href="https://github.com/sirDevelop/portfolio-website">
-                            <img class="thumbnail" src="../public/image/portfolio-website.png" alt="" /></a>
-                        <div class="post-preview">
-                            <h6>This Personal Website!</h6>
-                            <p class="post-intro">
-                                A full stack personal website involving HTML, CSS, Javascript, and a Node.js backend.
-                                Featuring lots of personally created digital artwork.
-                            </p>
-                            <a target="_blank" href="https://github.com/sirDevelop/portfolio-website">Source
-                                Code</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div>
-                    <div class="post">
-                        <a target="_blank" href="https://github.com/sirDevelop/London-Housing-Data-Analysis">
-                            <img class="thumbnail" src="../public/image/london-housing-analysis.png" alt="" /></a>
-                        <div class="post-preview">
-                            <h6>Analysis of London Housing Prices</h6>
-                            <p class="post-intro">
-                                Housing prices of 32 boroughs in London are analyzed over a 2 decade period. After data
-                                processing and cleaning, visualizations and supporting conclusions are provided.
-                            </p>
-                            <a target="_blank" href="https://github.com/sirDevelop/London-Housing-Data-Analysis">Source
-                                Code</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div>
-                    <div class="post">
-                        <a target="_blank" href="https://github.com/sirDevelop/BellaBeat-Data-Analysis/tree/main">
-                            <img class="thumbnail" src="../public/image/bellabeat.png" alt="" /></a>
-                        <div class="post-preview">
-                            <h6>Analysis of Fitbit Data for BellaBeat</h6>
-                            <p class="post-intro">
-                                Analysis of Fitbit data of 33 users across a span of 30 days. The findings are used to
-                                give recommendations to the smart device company BellaBeat.
-                            </p>
-                            <a target="_blank"
-                                href="https://github.com/sirDevelop/BellaBeat-Data-Analysis/tree/main">Source
-                                Code</a>
-                        </div>
-                    </div>
+            <div class="grid row pb-5">
+                <div class="spinner-grow mx-auto" role="status">
+                    <span class="sr-only">Loading...</span>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="about" class="s1">
+    <section id="contact" class="sections">
         <div class="main-container" id="about_section2">
             <h3 style="text-align: center;">
-                <div class="slight-expand-on-hover">
+                <div class="slight-expand-on-hover my-4">
                     Get In Touch
                 </div>
             </h3>
@@ -428,9 +298,9 @@
         </div>
     </section>
 
-    <section id="ending" class="s2">
+    <section id="ending" class="sections">
         <h4>
-            <div class="slight-expand-on-hover">
+            <div class="slight-expand-on-hover my-4">
                 <p>
                     Looking for Work
                 </p>
@@ -441,12 +311,44 @@
         </h4>
 
         <h6>
-            <div class="slight-expand-on-hover">
-                <p>Built and maintained by yours truly</p>
+            <div class="slight-expand-on-hover my-4">
+                <p class="font-weight-bold">Built and maintained by yours truly</p>
             </div>
         </h6>
     </section>
 
+	<div class="hide" id="holder">
+		<section id="digital_art" class="sections">
+			<div class="main-container text-center">
+				<div class="greeting-wrapper center">
+					<h1 style="margin-bottom: 10px">Digital Art Gallery</h1>
+					<p>Created using Chaotica, all rights reserved.</p>
+					<p>Click on each image to expand.</p>
+				</div>
+		
+				<div class="nav-wrapper">
+					<div class="dots-wrapper">
+						<div id="dot-1" class="browser-dot"></div>
+						<div id="dot-2" class="browser-dot"></div>
+						<div id="dot-3" class="browser-dot"></div>
+					</div>
+		
+					<ul id="navigation">
+						<li><a href="/#intro" onclick="openSection('intro')">Home</a></li>
+						<li><a href="/#digital_art" onclick="openSection('digital_art')">Digital Art</a></li>
+						<!-- <li><a href="/generativeart">Generative Art</a></li> -->
+						<li><a href="/#" onclick="openSection('contact')">Contact</a></li>
+					</ul>
+				</div>
+				<div id="gallery"></div>
+				<button id="load-more" type="button" class="btn btn-outline-dark my-3" onclick="loadImage()">Load more</button>
+			</div>
+		</section>
+	</div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js"
+        integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+"
+        crossorigin="anonymous"></script>
     <script type="text/javascript" src="../public/script.js"></script>
 </body>
 
