@@ -342,7 +342,8 @@ ul {
 }
 
 #skills,
-#facts {
+#facts,
+#certs {
 	display: flex;
 	/* justify-content: space-evenly; */
 	background-color: var(--previewShadow);

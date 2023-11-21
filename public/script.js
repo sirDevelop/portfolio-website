@@ -32,6 +32,24 @@ function setTheme(mode) {
 
 	localStorage.setItem("theme", mode);
 }
+let liTags = document.getElementById("facts").getElementsByTagName('li');
+	for (let i = 0; i < liTags.length; i++) {
+		if (i % 2 == 1) {
+			liTags[i].style.border = "2px solid";
+			liTags[i].style.borderLeft = "none";
+			liTags[i].style.borderRight = "none";
+			if (i == liTags.length - 1) {
+				liTags[i].style.borderBottom = "none";
+			}
+		}
+
+		liTags[i].style.width = "95%";
+		liTags[i].style.paddingBottom = "10px";
+	}
+	
+	//Profile Image Slide Animation
+	let slideIndex = 1;
+	showSlides(slideIndex);
 
 let imgPath = ["../public/image/divine-noise-fractal.png", "../public/image/chaos-flower-fractal.png",
 	"../public/image/turquoise-cymbals-fractal.png", "../public/image/yellow-feng-shui-fractal.png",
@@ -84,7 +102,8 @@ function loadImage() {
 		}
 	}
 }
-
+// certificateInit()
+// slideShowInit()
 $(document).ready(function () {
 	const emailSuccess = getCookie("emailSuccess");
 	// console.log(emailSuccess);
@@ -103,16 +122,9 @@ $(document).ready(function () {
 		});
 		deleteCookie("emailSuccess");
 	}
-
+	certificateInit()
 	postInit()
 	loadImage()
-	// imgPath.forEach(imgUrl => {
-	// 	let imgDiv = $("<div class='img-w'></div>");
-	// 	imgDiv.appendTo($("#gallery"));
-	// 	imgUrl = imgUrl.replace('.png', '-min.png');
-	// 	imgDiv.css('background-image', 'url(..' + imgUrl + ')');
-	// 	imgDiv.wrap("<div class='img-c'></div>");
-	// });
 
 	$(document).on("click", ".img-c", function () {
 		let w = $(this).outerWidth();
@@ -159,25 +171,6 @@ function getCookie(cname) {
 	return "";
 }
 
-let liTags = document.getElementById("facts").getElementsByTagName('li');
-for (let i = 0; i < liTags.length; i++) {
-	if (i % 2 == 1) {
-		liTags[i].style.border = "2px solid";
-		liTags[i].style.borderLeft = "none";
-		liTags[i].style.borderRight = "none";
-		if (i == liTags.length - 1) {
-			liTags[i].style.borderBottom = "none";
-		}
-	}
-
-	liTags[i].style.width = "95%";
-	liTags[i].style.paddingBottom = "10px";
-}
-
-//Profile Image Slide Animation
-let slideIndex = 1;
-showSlides(slideIndex);
-
 // Next/previous controls
 function plusSlides(n) {
 	showSlides(slideIndex += n);
@@ -204,6 +197,24 @@ function showSlides(n) {
 	dots[slideIndex - 1].className += " active";
 }
 
+const slideShowImages = [
+	{ title: "Skydive Landing", src: "../public/image/skydive-landing-2.jpg" },
+	{ title: "Skydive 1", src: "../public/image/skydive1.jpg" },
+	{ title: "Skydive 2", src: "../public/image/skydive2.jpg" },
+	{ title: "Skydive 3", src: "../public/image/skydive3.jpg" },
+	{ title: "Skydive 4", src: "../public/image/skydive4.jpg" },
+	{ title: "Indra 1", src: "../public/image/Indra1.jpg" },
+	{ title: "Indra 2", src: "../public/image/Indra2.jpg" },
+	{ title: "Marco 1", src: "../public/image/Marco1.jpg" },
+	{ title: "Marco 2", src: "../public/image/Marco2.jpg" },
+]
+
+const certificates = [
+	{ title: "Google Data Analytics Professional Certificate", src: "https://www.coursera.org/account/accomplishments/professional-cert/8J35TQN8QSR6" },
+	{ title: "Meta Front-End Developer Professional Certificate", src: "https://www.coursera.org/account/accomplishments/professional-cert/2DYC2QTC9CRA" },
+	{ title: "Meta Back-End Developer Professional Certificate", src: "https://www.coursera.org/account/accomplishments/professional-cert/ZNRVZ4EFKVHB" },
+]
+
 const posts = [
 	{ category: "se", title: "Little Lemon Restaurant Website", text: "This is a fully responsive website that allows you to create user accounts, login/logout, view the menu, place orders, create reservations, and saves order and reservation history. The tech stack involves HTML, CSS, JS, React, NodeJS, and MongoDB.", img: "../public/image/little-lemon-app-react.png", link: "https://github.com/sirDevelop/little-lemon-app", linkTitle: "Source Code" },
 	{ category: "se", title: "Musical Beat Maker", text: "Web application that allows users to choose between 4 different kicks, 4 different snares, and 4 different hihats to produce a beat. The tempo can be adjusted from 20 bpm up to 300 bpm. Coded in React.", img: "../public/image/beatmaker-project.png", link: "https://github.com/sirDevelop/beat-maker", linkTitle: "Source Code" },
@@ -214,6 +225,7 @@ const posts = [
 	{ category: "ds", title: "Analysis of London Housing Prices", text: "Housing prices of 32 boroughs in London are analyzed over a 2 decade period. After data processing and cleaning, visualizations and supporting conclusions are provided.", img: "../public/image/london-housing-analysis.png", link: "https://github.com/sirDevelop/London-Housing-Data-Analysis", linkTitle: "Source Code" },
 	{ category: "ds", title: "Analysis of Fitbit Data for BellaBeat", text: "Analysis of Fitbit data of 33 users across a span of 30 days. The findings are used to give recommendations to the smart device company BellaBeat.", img: "../public/image/bellabeat.png", link: "https://github.com/sirDevelop/BellaBeat-Data-Analysis/tree/main", linkTitle: "Source Code" }
 ]
+
 let loadedImage = 0
 
 function openSection(name) {
@@ -278,11 +290,35 @@ const imageVerification = (src, i) => {
 	}
 }
 
+// slide show section
+const slideShowInit = () => {
+	slideShowHTML = ""
+	slideShowImages.forEach((image, i) => {
+		slideShowHTML += `<div class="mySlides"><img id="profile_pic"
+			src="${image.src}" alt="" /></div>`
+	})
+	console.log('slideShowHTML', slideShowHTML)
+	$(".slideshow-container").append(slideShowHTML)
+}
+
+// certificates section
+const certificateInit = () => {
+	certsHTML = "<ul>"
+	certificates.forEach((certs, i) => {
+		certsHTML += `<li><a target="_blank"
+		href="${certs.src}">
+		${certs.title}
+	</a></li>`
+	})
+	certsHTML += "</ul>"
+	$("#certs").append(certsHTML)
+}
+
 // creates the past projects section
 const postInit = () => {
-	let html = ""
+	let postsHtml = ""
 	posts.forEach((post, i) => {
-		html += `<div class="element-item ${post.category} hide col-sm-6 col-md-4 p-3">
+		postsHtml += `<div class="element-item ${post.category} hide col-sm-6 col-md-4 p-3">
 			<div class="card">
 				<a target="_blank" href="${post.link}">
 					<img class="card-img-top img-${i}" src="${post.img}" alt="" /></a>
@@ -296,8 +332,9 @@ const postInit = () => {
 			</div>
 		</div>`
 	})
+
 	// adds the isotope functionality to the grid
-	$.when($(".grid").append(html)).done(() => {
+	$.when($(".grid").append(postsHtml)).done(() => {
 		posts.forEach((post, i) => {
 			imageVerification(post.img, i)
 		})
