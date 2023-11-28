@@ -359,9 +359,14 @@ ul {
 	width: 100%;
 }
 
+div.card:hover {
+	
+	filter: brightness(90%);
+}
+
 #past_projects img:hover {
-	opacity: 0.8;
-	filter: alpha(opacity=80);
+	opacity: 0.5;
+	filter: alpha(opacity=50);
 }
 
 .post-wrapper {
