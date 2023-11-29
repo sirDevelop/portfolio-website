@@ -64,6 +64,8 @@ server.once('close', function () {
     try {
       const { name, subject, email, message } = req.body
       if (name && name.length && email && email.length && subject && subject.length && message && message.length) {
+
+        // environment variables are declared on my AWS environment
         const bot = new TelegramBot(process.env.TELEGRAM_TOKEN_ID/*, { polling: true } */);// polling is for returning the errors.
         bot.sendMessage(process.env.CHAT_ID, `${name}\n${subject}\n${email}\n${message}`)
         res.cookie("messageSuccess", true)
