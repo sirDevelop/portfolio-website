@@ -1,3 +1,14 @@
+// const Toast = Swal.mixin({
+// 	toast: true,
+// 	position: "top-end",
+// 	showConfirmButton: false,
+// 	timer: 3000,
+// 	timerProgressBar: true,
+// 	didOpen: (toast) => {
+// 		toast.addEventListener("mouseenter", Swal.stopTimer)
+// 		toast.addEventListener("mouseleave", Swal.resumeTimer)
+// 	},
+// })
 
 const slideShowImages = [
 	{ title: "Skydive Landing", src: "../public/image/skydive-landing-2.jpg" },
@@ -261,22 +272,30 @@ function loadImage() {
 }
 
 $(document).ready(function () {
-	const emailSuccess = getCookie("emailSuccess");
-	// console.log(emailSuccess);
-	// console.log(emailSuccess == "true");
-	if (emailSuccess) {
-		$.Toast("Success!", "Email has been sent", "success", {
+	if (window.location.hash) openSection(window.location.hash.replace("#",""))
+	const messageSuccess = getCookie("messageSuccess");
+	// console.log(messageSuccess);
+	// console.log(messageSuccess == "true");
+	if (messageSuccess) {
+		// Toast.fire({
+		// 	icon: "success",
+		// 	title: "Message has been sent!",
+		// 	background: '#29ab9f',
+		// 	color: '#4b5156',
+		// 	iconColor: "white"
+		// })
+		$.Toast("Success!", "Message has been sent", "success", {
 			has_icon: true,
 			has_close_btn: true,
 			stack: true,
 			position_class: "toast-top-left",
 			fullscreen: false,
-			timeout: 6000,
+			timeout: 4000,
 			sticky: false,
 			has_progress: true,
 			rtl: false,
 		});
-		deleteCookie("emailSuccess");
+		deleteCookie("messageSuccess");
 	}
 	certificateInit()
 	postInit()

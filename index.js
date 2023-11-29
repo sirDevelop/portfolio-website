@@ -4,6 +4,7 @@ const exphbs = require("express-handlebars");
 const path = require("path");
 const nodemailer = require("nodemailer");
 const cookieParser = require("cookie-parser");
+const TelegramBot = require("node-telegram-bot-api");
 
 require("dotenv").config();
 
@@ -49,12 +50,32 @@ server.once('close', function () {
   //   res.sendFile( __dirname + "/views/" + "digitalart.html" );
   // });
 
-  app.get('s3url', (req, res) => {
+  // app.get('s3url', (req, res) => {
 
-  });
+  // });
 
-  app.get("/generativeart", (req, res) => {
-    res.sendFile(__dirname + "/views/" + "generativeart.html");
+  // app.get("/generativeart", (req, res) => {
+  //   res.sendFile(__dirname + "/views/" + "generativeart.html");
+  // });
+
+
+
+  app.post("/send", (req, res) => {
+    try {
+      const { name, subject, email, message } = req.body
+      if (name && name.length && email && email.length && subject && subject.length && message && message.length) {
+        const bot = new TelegramBot(process.env.TELEGRAM_TOKEN_ID/*, { polling: true } */);// polling is for returning the errors.
+        bot.sendMessage(process.env.CHAT_ID, `${name}\n${subject}\n${email}\n${message}`)
+        res.cookie("messageSuccess", true)
+        
+        res.redirect("/");
+      } else {
+        return console.log(error);
+      }
+    
+    } catch (error) {
+      return console.log(error);
+    }
   });
   /*
   app.post("/send", (req, res) => {
@@ -96,7 +117,7 @@ server.once('close', function () {
       if (error) {
         return console.log(error);
       } else {
-        res.cookie("emailSuccess", true);
+        res.cookie("messageSuccess", true);
       }
       console.log("Message sent: %s", info.messageId);
       console.log("Preview URL: %s", nodemailer.getTestMessageUrl(info));

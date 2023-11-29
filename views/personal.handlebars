@@ -239,6 +239,8 @@
                     Get In Touch
                 </div>
             </h3>
+
+            {{!-- visits URL /send in index.js --}}
             <form id="contact-form" method="POST" action="send">
                 <label>Name</label>
                 <input class="input-field" type="text" name="name" required />
@@ -252,7 +254,7 @@
                 <label>Message</label>
                 <textarea class="input-field" type="text" name="message" required></textarea>
 
-                <input id="submit-btn" type="submit" value="Send (Currently Disabled b/c of Spamming)" disabled />
+                <input id="submit-btn" type="submit" value="Send" />
             </form>
         </div>
     </section>
@@ -308,6 +310,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js"
         integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+"
         crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script type="text/javascript" src="../public/script.js"></script>
 </body>
 
