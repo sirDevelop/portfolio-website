@@ -11,11 +11,11 @@
 // })
 
 const slideShowImages = [
+	{ title: "Paragliding", src: "../public/image/paragliding.jpg" },
 	{ title: "Skydive Landing", src: "../public/image/skydive-landing-2.jpg" },
 	{ title: "Skydive 1", src: "../public/image/skydive1.jpg" },
 	{ title: "Skydive 2", src: "../public/image/skydive2.jpg" },
 	{ title: "Skydive 3", src: "../public/image/skydive3.jpg" },
-	{ title: "Skydive 4", src: "../public/image/skydive4.jpg" },
 	{ title: "Indra 1", src: "../public/image/Indra1.jpg" },
 	{ title: "Indra 2", src: "../public/image/Indra2.jpg" },
 	{ title: "Marco 1", src: "../public/image/Marco1.jpg" },
