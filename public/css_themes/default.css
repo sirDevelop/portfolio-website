@@ -37,13 +37,18 @@ strong {
 	font-weight: 500;
 }
 
-p,
+p:not(.card-text),
 li,
 span,
 label,
 input,
 textarea {
 	color: var(--secondaryText);
+	font-family: "Roboto Mono", monospace;
+}
+
+.card p.card-text {
+	color: black;
 	font-family: "Roboto Mono", monospace;
 }
 
