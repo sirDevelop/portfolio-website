@@ -394,7 +394,7 @@ function openSection(name) {
 			contact.classList.add("hide")
 			break;
 		case "intro":
-			postInit()
+			//postInit()
 			intro.classList.remove("hide")
 			// add to change back default coloring of background
 			intro.classList.add("sections")
@@ -405,7 +405,6 @@ function openSection(name) {
 			digitalArt = digital_art.innerHTML
 			digital_art.remove()
 			$("#holder").append(`<section id="digital_art" class="sections">${digitalArt}</section>`)
-			postInit()
 			break;
 		case "contact":
 			intro.classList.remove("hide")
